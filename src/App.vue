@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <h1>Song Key Finder</h1>
+    <img alt="Vue logo" src="./assets/1.jpeg" />
+    <div style="margin-top: 100px;"> </div>
     <Upload />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import Upload from "./components/Upload.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
     Upload
   }
 };

@@ -1,7 +1,6 @@
 
 <template>
     <div>
-        <h1>Song Key Detection</h1>
         <loading :active.sync="isLoading"
             :can-cancel="false"
             :is-full-page="fullPage"
@@ -53,7 +52,8 @@ export default {
             method: "post",
             thumbnailWidth: 150,
             maxFilesize: 50,
-            acceptedFiles: ".mp3",
+            acceptedFiles: ".mp3, .wav",
+            dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Drag and Drop audio files here to analyze your music",
             headers: { "My-Awesome-Header": "header value" }
         }
     }
