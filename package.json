@@ -13,8 +13,10 @@
     "bootstrap-vue": "^2.0.2",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
+    "vue-lazy-background-images": "^1.0.0",
     "vue-loading-overlay": "^3.2.0",
-    "vue2-dropzone": "^3.6.0"
+    "vue2-dropzone": "^3.6.0",
+    "vuetify": "^2.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
@@ -27,7 +29,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "prettier": "^1.18.2",
+    "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-cli-plugin-vuetify": "^0.6.3",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.2.2"
   }
 }

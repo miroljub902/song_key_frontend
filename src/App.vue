@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <h1>Song Key Finder</h1>
-    <img alt="Vue logo" src="./assets/1.jpeg" />
-    <div style="margin-top: 100px;"> </div>
-    <Upload />
-  </div>
+    <v-parallax dark src="./assets/piano2.jpg" height="1300">
+        <h1>Song Key Finder</h1>
+        <div style="margin-top: 100px;"> </div>
+        <Upload />
+    </v-parallax>
+  </div> 
 </template>
 
 <script>
 import Upload from "./components/Upload.vue";
-
 export default {
   name: "app",
   components: {
@@ -25,6 +25,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+
 </style>

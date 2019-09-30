@@ -8,7 +8,7 @@
         
         <label v-if="isLoading">Analyzing...</label>
 
-        <vue-dropzone ref="files" id="dropzone" :options="dropzoneOptions" @vdropzone-complete="afterComplete">
+        <vue-dropzone style="margin-left: 150px; margin-right: 150px" ref="files" id="dropzone" :options="dropzoneOptions" @vdropzone-file-added="fileAdded" @vdropzone-complete="afterComplete">
         </vue-dropzone>
         
         <div id="cards" v-for="(item, index) in resultArray" :key="index">
@@ -42,6 +42,7 @@ export default {
   },
   data: function () {
     return {
+        files: [],
         isLoading:false,
         fullPage: true,
 
@@ -50,15 +51,20 @@ export default {
         dropzoneOptions: {
             url: 'http://127.0.0.1:5000/api/upload',
             method: "post",
+            paramName: "files",
+            acceptedFiles: ".mp3",
             thumbnailWidth: 150,
             maxFilesize: 50,
-            acceptedFiles: ".mp3, .wav",
+            maxFile: 5,
             dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>Drag and Drop audio files here to analyze your music",
-            headers: { "My-Awesome-Header": "header value" }
         }
     }
   },
   methods: {
+    fileAdded(file) {
+        console.log(file)
+        this.files.push(file)
+    },
     async afterComplete(file) {
         this.isLoading = true;
         await axios.get('http://127.0.0.1:5000/api/get_analysis').then(res => {          
@@ -70,10 +76,13 @@ export default {
                     scale: '',
                     key: '',
                 };
+                result.name = this.files[0].name
                 result.bpm = res.data.bpm;
                 result.scale = res.data.scale;
                 result.key = res.data.key;
+                
                 this.resultArray.push(result);
+                console.log(this.resultArray)
             }
         });
     }

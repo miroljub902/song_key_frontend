@@ -3,8 +3,11 @@ import App from "./App.vue";
 import BootstrapVue from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
 Vue.config.productionTip = false;
-Vue.use(BootstrapVue);
+Vue.use(BootstrapVue, Vuetify);
 
 new Vue({
   render: h => h(App)

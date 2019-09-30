@@ -1,9 +1,9 @@
 <template>
     <b-card-group deck style="justify-content: center; margin-top: 20px;">
         <b-card
-                    header="featured"
+                    :header= "result.name"
                     header-tag="header"
-                    bg-variant="dark"
+                    bg-variant="secondary"
                     text-variant="white"
                     class="resultcard"
                     style="max-width: 50rem"
@@ -13,12 +13,12 @@
                 <div>
                     {{result.key}}
                     {{result.scale}}
-                    <label>Key</label>
+                    <div class="subtitle">Key</div>
                 </div>
 
                 <div>
                     {{result.bpm}}
-                    <div>BPM</div>
+                    <div class="subtitle">BPM</div>
                 </div>
             </div>
 
@@ -38,5 +38,8 @@ export default {
 .cardContent {
     display: flex;
     justify-content: space-around;
+}
+.subtitle {
+    font-weight: bold;
 }
 </style>
