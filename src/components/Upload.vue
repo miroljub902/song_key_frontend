@@ -49,7 +49,7 @@ export default {
         iscomplete:false,
         resultArray: [],
         dropzoneOptions: {
-            url: 'http://127.0.0.1:5000/api/upload',
+            url: 'http://ec2-18-191-230-117.us-east-2.compute.amazonaws.com:5000/api/upload',
             method: "post",
             paramName: "files",
             acceptedFiles: ".mp3",
@@ -67,7 +67,7 @@ export default {
     },
     async afterComplete(file) {
         this.isLoading = true;
-        await axios.get('http://127.0.0.1:5000/api/get_analysis').then(res => {          
+        await axios.get('http://ec2-18-191-230-117.us-east-2.compute.amazonaws.com:5000/api/get_analysis').then(res => {          
             if (res.status === 200) {
                 this.isLoading = false;
                 this.iscomplete = true;
